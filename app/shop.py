@@ -28,10 +28,12 @@ class Shop:
         return prices
 
     def get_receipt(self, customer: Customer) -> str:
+        receipt_datetime = datetime(
+            2021, 1, 4, 12, 33, 41
+        ).strftime("%d/%m/%Y %H:%M:%S")
+
         receipt = (
-            f"\nDate: {datetime(
-                2021, 1, 4, 12, 33, 41
-            ).strftime("%d/%m/%Y %H:%M:%S")}\n"
+            f"\nDate: {receipt_datetime}\n"
             f"Thanks, {customer.name}, for your purchase!\n"
             "You have bought:\n"
         )
